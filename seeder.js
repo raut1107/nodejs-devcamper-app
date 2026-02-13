@@ -20,7 +20,7 @@ const importData = async () => {
     process.env.SEEDING = "true";
 
     await Bootcamp.insertMany(bootcamps);
-    await Course.insertMany(courses);
+    // await Course.insertMany(courses);
     console.log("Data Imported...");
     process.exit();
   } catch (err) {
