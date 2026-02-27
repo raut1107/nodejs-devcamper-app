@@ -38,6 +38,11 @@ const CourseSchema = new mongoose.Schema({
     ref: "bootcamps", // this is the name of the model we want to reference
     required: true,
   },
+  user: {
+    type: mongoose.Schema.ObjectId,
+    ref: "Users", // this is the name of the model we want to reference
+    required: true,
+  },
 });
 
 CourseSchema.statics.getAverageCost = async function (bootcampId) {
