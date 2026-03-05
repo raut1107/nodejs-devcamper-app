@@ -7,8 +7,10 @@ const { protect, authorize } = require("../middleware/auth");
 // Include other resources router
 
 const courseRouter = require("./courses");
+const reviewRouter = require("./review");
 // re-route into other resource routers
 router.use("/:bootcampId/courses", courseRouter);
+router.use("/:bootcampId/reviews", reviewRouter);
 
 //  call to the controller functions
 router.get("/", advanceResult(Bootcamp, "courses"), controler.getBootcamps); // implemented middleware for advance results of search filter sort pagination
